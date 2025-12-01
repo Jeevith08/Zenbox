@@ -13,6 +13,10 @@ dist-ssr
 *.local
 .venv
 .env
+backend/credentials.json
+backend/token.json
+__pycache__/
+*.pyc
 
 # Editor directories and files
 .vscode/*
