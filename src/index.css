@@ -1,0 +1,150 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Simple shimmer effect used while loading */
+@keyframes shimmer {
+  0%   { background-position: 0% 0%; }
+  100% { background-position: -200% 0%; }
+}
+
+.shimmer {
+  background-size: 200% 100%;
+  animation: shimmer 1.5s linear infinite;
+}
+
+/* Zenbox Design System - Teal & Lavender Theme
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Brand Colors */
+    --primary: 171 76% 52%;        /* Teal #2CB9A9 */
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 171 76% 65%;
+    --primary-dark: 171 76% 42%;
+    
+    --secondary: 252 88% 70%;      /* Lavender #7C6CF5 */
+    --secondary-foreground: 0 0% 100%;
+    --secondary-light: 252 88% 80%;
+    --secondary-dark: 252 88% 60%;
+    
+    /* Background & Surface */
+    --background: 214 32% 98%;     /* Off White #F8FAFC */
+    --surface: 0 0% 100%;
+    --surface-hover: 214 32% 96%;
+    
+    /* Text */
+    --foreground: 214 32% 16%;     /* Dark Slate #1E293B */
+    --muted-foreground: 214 15% 55%;
+    
+    /* Interactive Elements */
+    --card: 0 0% 100%;
+    --card-foreground: 214 32% 16%;
+    --card-hover: 214 32% 97%;
+    
+    --border: 214 31% 91%;
+    --input: 214 31% 91%;
+    --ring: 171 76% 52%;
+    
+    /* Alert Colors */
+    --destructive: 0 85% 61%;      /* Coral Red #EF4444 */
+    --destructive-foreground: 0 0% 100%;
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(171 76% 52%), hsl(252 88% 70%));
+    --gradient-surface: linear-gradient(180deg, hsl(0 0% 100%), hsl(214 32% 98%));
+    --gradient-hero: linear-gradient(135deg, hsl(171 76% 52% / 0.1), hsl(252 88% 70% / 0.1));
+    
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 hsl(214 32% 16% / 0.05);
+    --shadow-md: 0 4px 6px -1px hsl(214 32% 16% / 0.1), 0 2px 4px -1px hsl(214 32% 16% / 0.06);
+    --shadow-lg: 0 10px 15px -3px hsl(214 32% 16% / 0.1), 0 4px 6px -2px hsl(214 32% 16% / 0.05);
+    --shadow-glow: 0 0 20px hsl(171 76% 52% / 0.3);
+    
+    /* Spacing & Animation */
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark Mode - Navy Background */
+    --background: 222 47% 8%;      /* Dark Navy #0F172A */
+    --surface: 222 47% 11%;
+    --surface-hover: 222 47% 13%;
+    
+    --foreground: 214 32% 95%;
+    --muted-foreground: 214 15% 70%;
+    
+    --card: 222 47% 11%;
+    --card-foreground: 214 32% 95%;
+    --card-hover: 222 47% 13%;
+    
+    --border: 222 47% 20%;
+    --input: 222 47% 20%;
+    
+    /* Keep brand colors consistent */
+    --primary: 171 76% 52%;
+    --secondary: 252 88% 70%;
+    --destructive: 0 85% 61%;
+    
+    /* Dark gradients */
+    --gradient-surface: linear-gradient(180deg, hsl(222 47% 11%), hsl(222 47% 8%));
+    --gradient-hero: linear-gradient(135deg, hsl(171 76% 52% / 0.15), hsl(252 88% 70% / 0.15));
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-inter antialiased;
+  }
+  
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    @apply w-2;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-surface;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-border rounded-full;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-muted-foreground;
+  }
+}
